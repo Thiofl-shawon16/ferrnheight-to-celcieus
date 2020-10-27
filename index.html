@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+    width: 250px;
+    background: orange;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    border: 3px solid lightskyblue;
+    border-radius: 5px;
+}
+h3 {
+    /* text-align: center; */
+    padding: 10px;
+    color: darkgreen;
+}
+div {
+    padding: 10px;
+}
+input[type="text"] {
+    padding: 10px;
+    border-color: azure;
+    border-radius: 5px;
+    outline: none;
+    color: teal;
+}
+button {
+    outline: none;
+    padding: 5px;
+    margin-top: 10px;
+    background: darkcyan;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+<div class="div">
+
+    <h3>Temperature convert</h3>
+    <div>
+        <input type="text" placeholder="Enter ferenheight"><br>   
+        <button onclick="myfunc()"type="submit">Let's See</button>  
+    </div>
+    <div class="a">
+        <input id="input" type="text" placeholder="Enter celcius"> <br>
+        <button onclick="myfunc2()" type="submit">Let's See</button>
+    </div>
+    
+</div>
+    
+    <script>
+        function myfunc(){
+            var fern =document.querySelector("input").value;
+
+            var cels = (fern - 32) * (5/9);// <- suttro
+
+             document.querySelector('h3').innerHTML=Math.round(cels)+" deg celcius"
+        }
+        function myfunc2(){
+            var cels = document.querySelector("#input").value;
+
+            var fern = (cels*(9/5) + 32);
+
+            document.querySelector('h3').innerHTML=Math.round(fern)+" deg ferenheight"
+        }
+        
+    </script>
+</body>
+</html>
